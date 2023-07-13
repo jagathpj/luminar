@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/de28041e38.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 500px;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+    .nav-item a {
+      position: relative;
+      color: #313131;
+    }
+
+    .nav-item a::after {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 3px;
+      bottom: 8px;
+      left: 50%;
+      background: rgb(88, 15, 156);
+      transform: translateX(-50%);
+      transition: width 0.5s;
+    }
+
+    .nav-item a:hover::after {
+      width: 85%;
+    }
+
+    .navbar-nav .nav-item a:hover,
+    .navbar-nav .nav-item a:focus {
+      color: rgb(88, 15, 156);
+    }
+
+    .navbar-nav .nav-item a:focus::after {
+      width: 85%;
+    }
+
+    .carousel-inner .carousel-item img {
+      height: 75vh;
+      filter: brightness(40%);
+    }
+
+    .carousel-inner .carousel-item .carousel-caption .btn {
+      background: rgb(88, 15, 156);
+    }
+
+    .carousel-inner .carousel-item .carousel-caption h1 {
+      position: relative;
+      animation: slideUp forwards ease 1s;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption p {
+      position: relative;
+      animation: slideUp forwards ease 1.3s;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption button {
+      position: relative;
+      animation: slideUp forwards ease 1.6s;
+    }
+
+    @keyframes slideUp {
+      0% {
+        left: 0px;
+        top: 100px;
+      }
+
+      100% {
+        left: 0;
+        top: 0;
+      }
+    }
+
+    @media(min-width:300px) and (max-width:768px) {
+      .carousel-inner .carousel-item .carousel-heading {
+        font-size: 15px;
+      }
+      .carousel-inner .carousel-item p {
+        font-size: 10px;
+      }
+
+      .carousel-inner .carousel-item img {
+        height: 500px;
+      }
+
+      .carousel-inner .carousel-item .btn {
+        font-size: 12px;
+      }
+    }
+
+    .modal-body input {
+      border: 0;
+    }
+
+    .but {
+      background: rgb(88, 15, 156);
+      border: 0;
+      color: aliceblue;
+      padding: 8px;
+
+    }
+
+    .but:hover {
+      background: rgb(120, 14, 219);
+    }
+
+    .modal-body input:focus {
+      outline: none;
+    }
+
+    /* about section style */
+
+    .about-head {
+      color: rgb(88, 15, 156);
+    }
+
+    .about-lead {
+      color: rgb(88, 15, 156);
+    }
+
+    .about-desc {
+      max-width: 580px;
+      line-height: 30px;
+    }
+
+    .container-md .row .col-lg-7 button {
+      background: rgb(88, 15, 156);
+      color: aliceblue;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      border: 2px solid white;
+      transition: all 0.3s;
+    }
+
+    .container-md .row .col-lg-7 button:hover {
+      border: 2px solid rgb(88, 15, 156);
+      color: rgb(88, 15, 156);
+      background: white;
+    }
+
+    .container-md .row .col-lg-5 img {
+      width: 90%;
+    }
+
+    @media (min-width:992px) and (max-width:1200px) {
+      .container-md .row .col-lg-5 img {
+        width: 400px;
+        margin: auto;
+      }
+    }
+
+    @media (min-width:1200px) {
+      .container-md .row .col-lg-5 img {
+        width: 90%;
+      }
+    }
+
+    @media (max-width:576px) {
+      .about-head {
+        width: 300px;
+        text-align: start;
+      }
+
+      .container-md {
+        padding: 0;
+        margin: 0;
+      }
+
+      .about-lead {
+        width: 300px;
+      }
+
+      .about-desc {
+        width: 300px;
+      }
+      .card-title{
+        font-size: 15px !important;
+        max-width: 200px;
+      }
+      .card-text{
+        font-size: 13px;
+        max-width: 250px;
+      }
+      .card-body .btn{
+        font-size: 13px;
+      }
+    }
+
+    /* courses section style */
+    #courses .col-lg-9 {
+      background: white;
+      margin: auto;
+      transition: all 0.15s;
+    }
+
+    #courses .col-lg-9:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transform: translateY(-2px);
+    }
+
+    #courses h2 {
+      color: rgb(88, 15, 156);
+    }
+
+    #courses span {
+      color: rgb(103, 64, 139)
+    }
+
+    #courses .col-lg-9 .row .col-lg-5 img {
+      height: 100%;
+    }
+
+    
+    .course-head {
+      color: rgb(88, 15, 156);
+      max-width: 550px;
+    }
+
+    .ab-nav {
+      background: rgb(88, 15, 156);
+      color: #ffffff;
+      font-size: 15px;
+    }
+
+    .card-title {
+      color: rgb(88, 15, 156);
+    }
+
+    .card .card-body .btn {
+      background: rgb(88, 15, 156);
+      color: white;
+    }
+
+    .card {
+      height: 470px;
+    }
+
+    .card .card-body p {
+      letter-spacing: 1px;
+    }
+
+    .col-lg-9 .row .card img {
+      margin-left: 5px;
+    }
+    .card-hover{
+      transition: all 0.3s;
+      background:white ;
+    }
+    .card-hover:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #again-courses{
+      
+      margin: 0;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row align-items-center ab-nav ">
+    <div class="col-lg-6 px-5 text-center pt-3">
+      <p>Have any question? +91 8086 651 651</p>
+    </div>
+    <div class="col-lg-6 px-5 text-center"> <span class="d-none d-md-inline"> <i class="fa-solid fa-phone"
+          style="color: #ffffff;"></i> +91 8086 651 651 </span> <i class="fa-regular fa-envelope"
+        style="color: #ffffff;"></i> contact@luminartechnolab.com</div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-md">
+      <a class="navbar-brand w-25 p-0" href="#">
+        <img src="./images/download.jpg" alt="" class="w-75 ">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fs-5 active" aria-current="page" href="#home" style=" font-weight: 500;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="#courses" style=" font-weight: 500;">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  fs-5" href="#" style=" font-weight: 500;">Placement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  fs-5" href="#" style=" font-weight: 500;">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  fs-5" href="#about" style=" font-weight: 500;">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  fs-5" href="#" style=" font-weight: 500;">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img src="./images/5.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block text-start ms-5 pb-5">
+          <h1 class="display-md-4 fw-bold mb-4 carousel-heading">Kerala's No.1 IT Finishing School <br>100% Placement
+            Assistance</h1>
+          <p class="mb-4">we at luminar technolab offers best software traing and placement in engineering technology lik BIG DATA,sata science machine learning python software testing</p>
+          <button type="button" class="btn btn-lg rounded-pill text-light mb-5 but">View Courses</button>
+        </div>
+      </div>
+      <div class="carousel-item " data-bs-interval="3000">
+        <img src="./images/6.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block text-start">
+          <h1 class="display-4 fw-bold text-start mb-4 carousel-heading">Data-Science, ML & AI <br> Big Data - Hadoop &
+            Spark <br>Python
+            Data Science</h1>
+          <P> We luminar Technolab offers best software training and placement in engineering technologyies like big data,datascience machine learning deep learning and AI</P>
+          <button type="button" class="btn btn-lg rounded-pill text-light mb-5 but">View Courses</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-secondary mt-2 but " data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch Modal
+    </button>
+  </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <h1 class="modal-title fs-5 mb-3" id="exampleModalLabel">Get Training Quote For Free</h1>
+          <form action="">
+            <input type="text" placeholder="Name"><br>
+            <hr>
+            <input type="text" placeholder="Email"><br>
+            <hr>
+            <input type="text" placeholder="Phone Number"><br>
+            <hr>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select course interested in</option>
+              <option value="1">python</option>
+              <option value="2">mearn</option>
+              <option value="3">data science</option>
+            </select>
+            <hr>
+            <input type="text" placeholder="City"><br>
+            <hr>
+            <input type="text" placeholder="Comments"><br>
+            <hr>
+            <button class="sub but">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- about section -->
+
+  <section id="about" class="pt-5">
+    <div class="container-md">
+      <div class="row justify-content-center align-items-center px-5">
+        <div class="col-lg-7 px-md-5">
+          <h2 class="text-start about-head mb-3">Luminar Technolab Pvt Ltd</h2>
+          <p class="lead about-lead mb-2">CIN: U80220KL2021PTC071578</p>
+          <p class="about-desc mb-4">Luminar Technolab is an IT Finishing School located near Infopark - Cochin, focused
+            on providing advanced
+            level software training to Students and by helping them to get placed in IT companies. We are a team of IT
+            professionals who have experience in IT sector for more than 15 plus years. Our fresher’s career foster
+            programs are Big Data Training, Data Science Training, Data Analytics Training, Python Training, Software
+            Testing Training & Selenium Training in Cochin, Kerala are designed in such a way to match with the current
+            industry requirements. Our Vision is to provide 100% placements to students those who enroll with us for our
+            specialized courses.</p>
+          <button class="btn btn-lg rounded-pill px-4 py-3 fw-bold">Learn More</button>
+        </div>
+        <div class="col-lg-5 py-lg-5">
+          <img src="./images/qq.jpg" alt="" class="ms-3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- courses section -->
+
+  <section id="courses" class="bg-tertiary pt-5 ">
+    <h2 class="text-center mt-5 mb-5">OUR <span>COURSES</span></h2>
+    <div class="col-lg-9 ">
+      <div class="row ps-3 align-items-center">
+        <div class="col-lg-5 p-0">
+          <img src="./images/data-science-1588143159.jpg" alt="" class=" img-fluid">
+        </div>
+        <div class="col-lg-5 ps-5 py-5">
+          <h4 class="course-head ">DATA SCIENCE - ML- AI - BIG DATA WITH CLOUD & TABLEAU</h4>
+          <p class="course-desc mt-3">Python, Hadoop, Spark, Data Analytics, Linear Algebra, Statistics, Probability
+            Concepts, Machine Learning,
+            Deep Learning, Data Science, Artificial Intelligence, Tableau, AWS Cloud.</p>
+          <p class="fw-bold">📅 Next Batch : Jan 03rd 2022 (09:30 am - 11:30 am)</p>
+          <p class="fw-bold">⏰ Duration: 6 Months, 5-6 Days a Week, 2-3 Hours/day </p>
+          <p class="fw-bold">🧑‍🏫 Course Fees: <a href="">VIEW MORE</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-5 col-12 " id="again-courses">
+    <div class="container-md">
+      <div class="row justify-content-around align-items-center">
+        <div class="col-lg-3 mb-3  col-8 card-hover">
+          <div class="card border-0">
+            <img src="./images/python-1588143191.jpg" class="card-img-top w-100 card-img">
+            <div class="card-body">
+              <h5 class="card-title mt-3" ">MEARN Stack Web Development Expert - Angular & React</h5>
+              <p class="card-text text-secondary fw-bold">MongoDB, Express.JS, Angular, React.js and Node.js..</p>
+              <a href="#" class="btn mt-3">View More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-3  col-8 card-hover">
+          <div class="card border-0">
+            <img src="./images/st-1588580359.jpg" class="card-img-top w-100 card-img">
+            <div class="card-body">
+              <h5 class="card-title mt-3">Software Testing Specialist </h5>
+              <p class="card-text text-secondary fw-bold">Manual Testing, Java foundations, Mobile Testing, Selenium
+                IDE, Selenium Web driver, Selenium Advanced Web...</p>
+              <a href="#" class="btn ">View More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-mb-3 col-8 card-hover">
+          <div class="card border-0">
+            <img src="./images/ms-1588143345.jpg" class="card-img-top w-100 card-img">
+            <div class="card-body">
+              <h5 class="card-title mt-3" style="font-size: 18px;">Python Django - Angular- Full Stack Web Development Expert
+              </h5>
+              <p class="card-text text-secondary fw-bold " style="font-size: 15px;">Core Python, Basics of Programming, Unix Commands, Advanced
+                Python, Django Framework, REST API, Git, Angul...</p>
+              <a href="#" class="btn">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
